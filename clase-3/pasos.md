@@ -4,7 +4,7 @@
 3- git commit -m "un comentario de lo que hicimos"
 4- git branch -M main
 5- crear un repo en GITHUB
-6- git remote add origin link del repositorio 
+6- git remote add origin https:... (url del repositorio) 
 7- git push -u origin main
 
 **Podemos usar git status para obtener informacion detallada del estado de nuestro repositorio**
@@ -14,3 +14,4 @@
 2- git commit -m "un comentario de lo que hicimos"
 3- git push
 
+**Si me equivoque al poner el git remote usamos el comando: " git remote set -url origin https:... (url correcto)**
