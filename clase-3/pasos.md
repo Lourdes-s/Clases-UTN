@@ -1,4 +1,4 @@
-**Si empezamos desde cero a hacer el repositoorio**
+**Si empezamos desde cero a hacer el repositorio**
 
     *1- git innit 
     *2- git add . 
@@ -9,6 +9,7 @@
     *7- git push -u origin main
 
 **Si ya estoy actualizando**
+
     Despues de hacer CTRL + S
     *1- git add . 
     *2- git commit -m "un comentario de lo que hicimos"
