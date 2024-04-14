@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <h1>Formularios</h1>
+    <h2>inputs mas utilizados:</h2>
+    <!-- estamos diciendo que esta parte va a ser un formulario cuando veamos java scriptt vamos a ver que es necesario que todos nuestros imputs esten dentro de la etiqueta de form-->
+    <form>
+        <div>
+            <label for="username">Ingresa tu nombre de usuario</label><!-- el label hace que nuestra pagina sea mas accesible --> <!-- el for lo tenemos que usar siempre --> <!-- si no uso label se despuntua mi pagina -->
+            <input type="text" name="username" id="username" placeholder="Nombre de usuario" maxlength="20" minlength="2"> <!-- placeholder es un tipo de "ejemplo" --> <!-- maxlenght para que solo te permita poner X caracteres maximo -->
+        </div>
+        <div>
+            <label for="password">Ingresa tu contraseña</label> 
+            <input type="password" name="password" id="password" required> <!-- required para que no me deje enviar el formulario sin completarlo -->
+        </div>
+        <div>
+            <label for="email">Ingresa tu email</label> <!-- el for es el mismo que el id -->
+            <input type="email" name="email" id="email">
+        </div>
+        <div>
+            <label for="pais">Selecciona un pais</label> <!-- el for es el mismo que el id -->
+            <select name="pais" id="pais">
+                <option value="NO" selected disabled>No seleccionado</option>
+                <option value="AR">Argentina</option> <!-- AR, FR, etc. es el valor universal del pais, para que pueda ser cargadi en una base de datos -->
+                <option value="FR">Francia</option>
+            </select>
+        </div>
+        <div>
+            <label for="pais-1">Seleccione un pais</label>
+            <span>Argentina</span><input type="radio" name="pais-1" id="ar">
+            <span>Argentina</span><input type="radio" name="pais-1" id="fr"> <!-- si en los dos pongo "pais-1" en el nombre solo me deja seleccionar uno  -->
+        </div>
+        <div>
+            <label for="mensaje">Ingrese su mensaje</label>
+            <textarea name="mensaje" id="mensaje" cols="30" rows="10" placeholder="Escribinos un mensaje"></textarea>
+        </div>
+        <div>
+            <input type="submit" value="Confirmar">
+        </div>
+    </form>
+</body>
+</html>
