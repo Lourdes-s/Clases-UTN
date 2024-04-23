@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- EJEMPLOS DE EIQUETADO SEMANTICO -->
+    <!-- estas 4 etiquetas nuevas (header, aside, main, footer) cumplen la misma funcion que un div pero con el plus de que tienen un significado -->
+    <header></header> <!-- cabezal de la pagina -->
+    <aside>
+        <h2>lista ordenada</h2>
+        <ol> <!-- OL = order list (lista ordenada) -->
+            <li>primer paso</li>
+            <li>segundo paso</li>
+            <li>tercer paso</li>
+        </ol>
+        <h2>lista desordenada</h2>
+        <ul> <!-- UL = unorder list (lista deordenada)  -->
+            <li>contenido</li>
+            <li>contenido</li>
+            <li>contenido</li>
+            <li>contenido desplegable
+                <ul>
+                    <li>contenido</li>
+                    <li>contenido</li>
+                    <li>contenido</li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <main> <!-- contenido de la pagina -->
+        <section class="hero"> <!-- no existe una etiqueta HERO pero la agregmos como una clase -->
+            <h1>Titulo principal</h1> <!-- texto mas importante de mi pagina -->
+            <img src="" alt="">
+        </section>
+    </main> 
+    <aside></aside>
+    <footer> <!-- pie de pagina -->
+        <section class="contact us"> <!-- al igual que HERO no existen las eiquetas CONTACT US ni LINKS pero tambien se pueden agregar como una clase -->
+        </section>
+        <section class="links">
+        </section>
+    </footer> 
+
+    <br>  
+
+    <!-- ATAJOS RAPIDOS -->
+    <!-- aside>nav>a*4 --> 
+        <!-- para crear un aside, con un nav y 4 liks --> <!-- el * me indica la cantidad que quiero -->
+        <aside>
+            <nav>
+                <a href=""></a>
+                <a href=""></a>
+                <a href=""></a>
+                <a href=""></a>
+            </nav>
+        </aside>
+    <!-- main>section*3>h2+p+a -->
+        <!-- para crear un main con 3 secciones y en cada seccion un h2, con un parrafo y un anchor --> <!-- para poner uno abajo de otro usamos el + -->
+        <main>
+            <section>
+                <h2></h2>
+                <p></p>
+                <a href=""></a>
+            </section>
+            <section>
+                <h2></h2>
+                <p></p>
+                <a href=""></a>
+            </section>
+            <section>
+                <h2></h2>
+                <p></p>
+                <a href=""></a>
+            </section>
+        </main>
+</body>
+</html>
