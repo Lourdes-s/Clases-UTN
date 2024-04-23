@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <!-- CSS= cascadig style sheet (hoja de estilo en cascada)  -->
+
+        <!-- SELECTOR DE ELEMENTOS --> <!-- llamamos a la etiqueta style dentro del head  -->
+    <style>/* dentro de esta etiqueta todo lo que escriba va a ser CSS, es decir que el navegador lo va a interpretar como CSS */
+    h2{
+        color: plum;
+        font-size: 50px;
+    }
+    .subtitulo-especial{
+        color: blueviolet;
+        font-size: 30px;
+    } 
+    *{ /* Selector universal (llama a todos los elemenntos) */
+        font-family: sans-serif;
+    }
+    #blossom{/* Selector de id*/
+        color: palevioletred;
+    }
+    </style>
+</head>
+<body>
+    <!-- ESILO EN LINEA/INLINE STYLE --> <!-- (esta practica no es recomendable, ya que deberiamos copiar y pegar los estilos en cada titulo que haga) -->
+    <header>
+        <div>
+            <img src="" alt="">
+            <h2 style="color: pink;">Titulo</h2>
+        </div>
+    </header>
+    <main>
+        <section>
+            <h2>Subtitulo</h2>
+            <h2 class="subtitulo-especial">Subtitulo especial</h2> <!-- si quiero que no sea como los demmas h2 -->
+            <h2 class="subtitulo-especial">Subtitulo especial</h2>
+            <h2  class="subtitulo-especial" id="blossom">Subtitulo 🌸</h2><!-- No es recomendable usar id -->
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae, quod. Fuga ullam aliquam quod, recusandae, consectetur laudantium rerum culpa omnis est totam illo nostrum eaque! Fugit, expedita deserunt. Fuga, soluta?</p>
+        </section>
+    </main>
+</body>
+</html>
