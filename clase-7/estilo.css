@@ -1,3 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); 
+
+*{
+    font-family: "Poppins", sans-serif;
+}
+
 h1{
-    color: pink;
+    color: rgb(255, 165, 192); /* cambiamos el color */
+    font-size: 40px; /* cambiamos el tamaño */
+    letter-spacing: 10px; /* cambiamos  el espacio entre letras */ /* cuando ponemos "-" se juntan las letras  */
+    word-spacing: 10px; /* cambiamos el espacio entre las palabras */
+    text-decoration: underline pink dotted;/*agregamos subrayado (underline, overline, line-through) */  /* tipo de subrayado, color, tipo de linea (wavy, dotted, double, dashed) */
+    text-shadow:/* agregamos sombra */ /* eje x - eje y - difuminado - color *//* podemos poner varias sombras*/
+    0px 0px 3px rgba(0, 0, 0, 0.26),
+    3px 2px 3px rgba(0, 0, 0, 0.37);
+    background-color: rgb(178, 207, 250);/* agregamos un color de fondo */
+    width: 500px; /* determminamos el ancho */
+    /* height: 100px; */
+    text-align: center; /* alineamos el texto */
+    font-family: "Dancing Script", cursive
+}
+
+p{
+    font-weight: 700; /* grosor de la letra */
+    font-size: 12px; /* tamaño de la letra */
+    font-style: italic; /* estilo de la letra */
+    line-height: 15px; /* interlineado */
+    
 }
