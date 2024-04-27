@@ -3,6 +3,7 @@
 
 *{
     font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
 }
 
 
@@ -10,4 +11,45 @@
 .caja{
     background-color: pink;
     height: 200px;
+    width: 200px;
+    margin-top: 30px;
+    padding: 10px;
+    box-sizing: border-box; /* para que el padding no aagrande la caja (generalmente se pone en el selector universal para "normalizar nuestra pagina" )*/
+    border: 5px solid skyblue;
+    margin: 100px;
+
+}
+
+h3{
+    background-color: pink;
+}
+
+span{
+    background-color: pink;
+}
+
+input{
+    background-color: pink;
+    width: 400px;
+    height: 200px;
+}
+
+header{
+    color: white;
+}
+
+.logo{
+    background-color: skyblue;
+    width: 50px;
+    height: 50px;
+}
+nav{
+    text-align: end;
+}
+
+.link{
+    display: inline-block;
+    background-color: pink;
+    width: 100px;
+    text-align: center;
 }
