@@ -53,3 +53,38 @@ nav{
     width: 100px;
     text-align: center;
 }
+
+.caja-resultado{
+    color: #555555;
+    background-color: #EEEEEE;
+    width: 700px;
+    padding: 30px 15px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid black
+
+}
+
+
+/* SIMPLIFICACION DE PADDING */ 
+/* (tambien aplica en margin) */
+
+/* Normal (no recomendado)
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 30px;
+    padding-bottom: 30px
+     */
+
+/* Organizado en sentido del reloj
+    padding: 30px 15px 30px 15px
+ */
+
+/* Organizado verical y horizontal (mas usado)
+padding: 30px 15px
+ */
+
+/* cuarta propiedad (padding de 15px a los constados y de 30px arriba 35px abajo)
+padding: 30px 15px 35px
+(top, left-right, boottom)
+*/
