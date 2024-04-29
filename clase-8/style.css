@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: pink;
+}
+.caja{
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+    border-radius: 10PX; /* redondear los bordes */
+    padding-left: 20px;
+    margin-left: 50px;
+    margin-top: 50px;
+    box-shadow: 10px -10px 19px #cc9aa2,
+    -10px 10px 19px #ffe6f4; /* hay un cuarto valor que es la base de la sombra, por lo general la sombra es del tamaño de mi objeto, si yo modifico este valor, crece el tamaño con respecto al objeto */ /* inset es para hacer la sombra para adentro */
+}
+
+input{
+    margin-top: 50px;
+    margin-left: 50px;
+    border: none;
+    box-shadow: 0px 2px 3px 0px  rgba(0, 0, 0, 0.158);
+    padding: 5px 18px;
+}
+h1{
+    color: gray;
+    font-family: sans-serif;
+    -webkit-text-stroke: 1px white;
+    margin-top: 40px;
+    margin-left: 10px;
+}

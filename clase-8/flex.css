@@ -1,0 +1,21 @@
+*{
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+    font-family: sans-serif;
+}
+
+.padre{
+    background-color: paleturquoise;
+    height: 100vh; /* vh= viewport height  *//* es una vista relativa */
+    width: 100vh; /* vw= viewprt width */
+    display: flex; /* cuando pongo display flex los elementos se linean */
+
+}
+
+.padre .hijo{/* todos los hijos que esten dentro de ese padre van a tener el estilo, ademas tiene mayor especificidad */
+width: 200px;
+height: 200px;
+border-radius: 10px;
+background-color: pink;
+}
