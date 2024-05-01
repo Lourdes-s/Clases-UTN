@@ -10,7 +10,7 @@
     height: 100vh; /* vh= viewport height  *//* es una vista relativa */
     width: 100vw; /* vw= viewprt width */
     padding: 20px;
-    display: flex; /* cuando pongo display flex los elementos se linean y habilias las propiedades flex direction */
+    display: flex; /* cuando pongo display flex los elementos estan en fila y habilias las propiedades flex direction */ /* puedo cambiarlo a columnn */
     gap: 50px; /* propiedad que me permite dar espacios entre los elementos */ /* tambien se  puede poner column-wrap y flex-wrap */
     flex-wrap: wrap;/* cuado no hay espacio va bajando */
     justify-content: space-between;/* mover los elementos en el eje X */ /* puede ser center, end start */
