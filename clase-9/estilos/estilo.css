@@ -1,1 +1,60 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+.color-card{
+    display: flex;
+    flex-direction: column;
+}
+
+.color-card .colors{
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    width: 250px;
+    background-color: pink;
+    border-radius: 15px;
+    overflow: hidden; /* para que el espacio de los hijos rebalsa el del padre */
+}
+/* NTH CHILD nos permite llamar segun el orden a hijos que tega el mismo nombre*/
+.color-card .colors .color:nth-child(1){
+    width: 100%;
+    height: 40%;
+    background-color:#F6F5F2;
+}
+
+.color-card .colors .color:nth-child(2){
+    width: 100%;
+    height: 30%;
+    background-color:#F0EBE3;
+}
+
+.color-card .colors .color:nth-child(3){
+    width: 100%;
+    height: 17%;
+    background-color:#F3D0D7;
+}
+
+.color-card .colors .color:nth-child(4){
+    width: 100%;
+    height: 13%;
+    background-color:#FFEFEF;
+}
+
+
+.color-card .color-card-controls{
+
+}
+
+.color-card .color-card-controls .btn-like{
+
+}
+
+.color-card .color-card-controls .time{
+
+
+}
