@@ -9,52 +9,58 @@
 .color-card{
     display: flex;
     flex-direction: column;
+    width: 250px;
+    gap: 15px;
 }
 
 .color-card .colors{
     display: flex;
     flex-direction: column;
     height: 250px;
-    width: 250px;
+    width: 100%;
     background-color: pink;
     border-radius: 15px;
-    overflow: hidden; /* para que el espacio de los hijos rebalsa el del padre */
+    overflow: hidden; /* para que el espacio de los hijos no rebalse el del padre */
 }
 /* NTH CHILD nos permite llamar segun el orden a hijos que tega el mismo nombre*/
 .color-card .colors .color:nth-child(1){
-    width: 100%;
-    height: 40%;
-    background-color:#F6F5F2;
+/* no es necesario que ponga width: 100% */
+    height:40%;
 }
 
 .color-card .colors .color:nth-child(2){
-    width: 100%;
-    height: 30%;
-    background-color:#F0EBE3;
+    height:30%;
 }
 
 .color-card .colors .color:nth-child(3){
-    width: 100%;
-    height: 17%;
-    background-color:#F3D0D7;
+    height:17%;
 }
 
 .color-card .colors .color:nth-child(4){
-    width: 100%;
-    height: 13%;
-    background-color:#FFEFEF;
+    height:13%;
 }
 
 
 .color-card .color-card-controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
 }
 
 .color-card .color-card-controls .btn-like{
-
+    height: 40px;
+    padding: 0 15px;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background-color: #FFFFFF;
+    border: 1PX solid black;
+    border-radius: 10px;
 }
 
 .color-card .color-card-controls .time{
+    color: #000000E6;
 
 
 }
