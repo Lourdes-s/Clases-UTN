@@ -11,10 +11,9 @@
 .colors-cards{
     display: flex;
     gap: 15px;
-    width: calc(250 * 4 + 20px * 3 + 20px * 2 + 4px); /* hacer el calc hace que la pagina quede bien ajustado a las medidas / / 1100 width */
+    width: calc(250px * 4 + 15px * 3 + 20px * 2); /* hacer el calc hace que la pagina quede bien ajustado a las medidas / / 1100 width */
     padding: 0 20px;
     flex-wrap: wrap;
-    border: 2px solid pink;
 }
 
 .color-card{
