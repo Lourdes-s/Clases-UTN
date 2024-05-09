@@ -26,7 +26,6 @@ header{
 
 .logo-container{
     display: flex;
-    flex-direction: row;
     gap: 25px;
 }
 
@@ -101,17 +100,18 @@ h1{
     align-items: center;
     border: 1px solid rgb(213,223,255);
     border-radius: 5px;
-    width: 360px;
+    width: 350px;
     height: 454px;
     justify-content: space-between;
 }
 
 .cards-container .opinion-card .card{
+    height: 100%;
+    justify-content: space-between;
     display: flex;
     flex-direction: column;
     gap: 18px;
     padding: 48px 32px;
-    justify-content: end;
 }
 
 .cards-container .opinion-card .card .stars{
@@ -121,10 +121,10 @@ h1{
 }
 
 .cards-container .opinion-card .card .p-cards{
+    height: 100%;
     color: #2f1c6a;
     font-size: 14px;
     line-height: 24px;
-
 }
 .cards-container .opinion-card .card .read-more{
     text-decoration: none;
