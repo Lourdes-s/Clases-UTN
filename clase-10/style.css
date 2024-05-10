@@ -1,0 +1,57 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.padre{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(184, 226, 243);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 200px;
+    position: relative;
+}
+
+.hijo{
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+    border: 1px solid grey;
+}
+
+.hijo:nth-child(1){
+    background-color: rgb(255, 219, 239);
+}
+.hijo:nth-child(2){
+    background-color: rgb(253, 169, 201);
+}
+.hijo:nth-child(3){
+    background-color: rgb(255, 138, 187);
+}
+
+/* INPUT centrado lupita*/
+
+.buscador-contenedor{
+position: relative;
+width: 300px;
+display: flex;
+align-items: center;
+}
+
+.buscador-contenedor input{
+width: 100%;
+}
+
+.buscador-contenedor .lupita{
+    width: 15px;
+    height: 15px;
+    background-color: pink;
+    border-radius: 100%;
+    position: absolute;
+    right: 5px;
+}
