@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.padre{
+    width: 100vw;
+/*     height: 100vh; */ /*es mejor no poner height, hay que evvitarlo, es mejor que el contenido me defina el alto de mi padre*/
+    background-color: pink;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 20px; /*si usamos padding va a funcionar como limitante*/
+}
+
+.hijo{
+    width: 100%; /*expresar en pixels puede generar un problemas, porque si por ejemplo mide 300px y mi dispositivo es mas fino se empezaria romper el codigo*/ /*entonces le vamos a dar porcentaje para que mida el 100% de mi padre*/ 
+    height: 250px; /* los altos de los hijos por lo general son mas chicos, pero depende del contenido */
+    border-radius: 15px;
+    background-color: white;
+    border: 1px solid black;
+    max-width: 500px; /* para que mi hijo no pase de los 500px */
+}
+
+
+/* hasta aca esta el mobile first ahora hay que hacerlo para que funcione tambien en otras pantallas */
+
+@media screen and (min-width: 900px){
+    .padre{
+        flex-direction: row;
+    }
+}
+/*esto vva a decir que cuando mi pantalla tenga 900px de ancho va a empezar a aplicarse este css, es como una condicion*/
+/*para que funcione la media query tiene que tener una especificidad superior a lo que estoy llamando y ademas tiene que estar abajo (ppor la cascada)*/
