@@ -33,5 +33,5 @@
         flex-direction: row;
     }
 }
-/*esto vva a decir que cuando mi pantalla tenga 900px de ancho va a empezar a aplicarse este css, es como una condicion*/
-/*para que funcione la media query tiene que tener una especificidad superior a lo que estoy llamando y ademas tiene que estar abajo (ppor la cascada)*/
+/*esto va a decir que cuando mi pantalla tenga 900px de ancho va a empezar a aplicarse este css, es como una condicion*/
+/*para que funcione la media query tiene que tener una especificidad superior a lo que estoy llamando y ademas tiene que estar abajo (por la cascada)*/
