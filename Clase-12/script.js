@@ -142,13 +142,6 @@ Hoisting: Es la capacidad de una variable de ser llamada antes de su declaracion
 
 EcmaScript (ES5) vs ES6
 
-
-CONST (ES6+)
-Tiene hoisting? No tiene
-Se puede reasignar? No se puede
-Se puede redeclarar? No se puede
-Valor implicito en undefined? NO tiene valor implicito
-
 VAR (ES5)
 Tiene hoisting? Si tiene
 Se puede reasignar? Se puede
@@ -156,11 +149,19 @@ Se puede redeclarar? se puede
 Valor implicito en undefined? SI
 el alcance de var siempre es GLOBAL
 
+
 LET (ES6+)
 Tiene hoisting? NO 
 Se puede reasignar? Se puede
 Se puede redeclarar? NO se puede redeclarar (por ahora...)
 Valor implicito en undefined? SI
+
+
+CONST (ES6+)
+Tiene hoisting? No tiene
+Se puede reasignar? No se puede
+Se puede redeclarar? No se puede
+Valor implicito en undefined? NO tiene valor implicito
 
 */
 
@@ -210,5 +211,7 @@ maria
 const PI = 3.14
 
 /* nombre = 'juan' */
+
+
 
 
