@@ -135,8 +135,8 @@ Siempre devuelven booleanos
 === : estricta igualdad (compara igualdad en valor y en tipo de dato)
 != : diferencia
 !== : estricta diferencia
->
-<
->=
-<=
+> : mayor
+< : menor
+>= : mayor igual
+<= : menor igual
 */

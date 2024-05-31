@@ -130,10 +130,12 @@ var nombre = 'pepe' */
 
 /* 
 Declaracion: es cuando creamos nuestra variable
+
 Sintaxis de declaracion:
 
 <tipo variable> identificador = data
-var nombre = 'pepe'
+(var/let/const) (ej: nombre) = (ej:'pepe')
+
 Ejemplo:
 var edad => estoy declarando la variable con el identificador edad
 
