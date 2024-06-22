@@ -147,3 +147,15 @@ El historial es
 se vera como:
 El historial es
 -hola
+
+Crear una funcion llamada agregarAlHistorial(elemento historial)
+elementoHistorial = {
+    accion: 'CALCULAR',
+    operacion: '-',
+    a: 1,
+    b: 2,
+    resultado: -1
+}
+va agregar el objeto al array global historial 
+
+vamos a hacer otra funcion llamada obtenerHistorial() que va a retornar el historial global 
