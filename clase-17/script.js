@@ -22,6 +22,11 @@ return emailAVerificar
 
 
 
+
+
+
+
+
 /* ----------------funcion de validar password----------------*/
 
 /* 
@@ -40,6 +45,11 @@ alert('password registrado: ' + password)
 return password
 }
  */
+
+
+
+
+
 
 
 
@@ -83,6 +93,9 @@ function login(){
 console .log(login())
 
  */
+
+
+
 
 
 
@@ -134,59 +147,9 @@ let password = obtenerDato(DATOS.PASSWORD)
 
 
 
-/* ------------------------------------------------------------------------------------------------------ */
 
 
-
-
-
-
-
-
-/* 
-function validarOperacion (operacion){
-    retun (operacion === '+' || operacion === '-')
-}
-
-
-
-
-/* 
-function suma(numero1,numero2){
-    return ('El resultado de ' + numero1 + " + " + numero2 + ' es ' + (numero1+numero2))
-}
-*/
-/* 
-function resta(numero1,numero2){
-    return ('El resultado de ' + numero1 + " - " + numero2 + ' es ' + (numero1-numero2))
-}
-
-
-
-
-
-
-
-function obtenerDato (data){
-    let dato = prompt(data.mensaje)
-    while(!data.validacion(dato)){
-            dato = prompt(data.error)
-    }
-}
-
-OPERACION: {
-    mensaje: 'ingrese el tipo de calculo que desea realizar (suma o resta)',
-    error: 'Error. por favor ingrese una operacion(suma o resta)',
-    validacion: validarOperacion
-}
-
- */
-
-
-
-
-
-
+/* ---------------------------------------------CODIGO COMPLETO--------------------------------------------------------- */
 
 function validarEmail(email) {
     return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(email)
@@ -197,7 +160,7 @@ function validarPassword(password){
 } 
 
 function validarOperacion (operacion){
-    retun (operacion === '+' || operacion === '-')
+    return (operacion === '+' || operacion === '-')
 }
 
 function validarNumero (numero){
@@ -209,6 +172,7 @@ function obtenerDato (data){
     while(!data.validacion(dato)){
         dato = prompt(data.error)
     }
+    alert (dato)
 }
 
 const DATOS = { 
@@ -218,8 +182,8 @@ const DATOS = {
         validacion: validarEmail
     },
     PASSWORD: {
-        Mensaje: 'Ingrese una contrasena. Debe contener:' +  '\n' + '-Una letra en mayuscula' + '\n' + '-Almenos 6 caracteres ',
-        Error:'Error. Debe contener:' +  '\n' + '-Una letra en mayuscula' + '\n' + '-Almenos 6 caracteres ',
+        mensaje: 'Ingrese una contrasena. Debe contener:' +  '\n' + '-Una letra en mayuscula' + '\n' + '-Almenos 6 caracteres ',
+        error:'Error. Debe contener:' +  '\n' + '-Una letra en mayuscula' + '\n' + '-Almenos 6 caracteres ',
         validacion: validarPassword
     },
     OPERACION: {
@@ -246,21 +210,211 @@ let password = obtenerDato(DATOS.PASSWORD)
     return {email: email, password: password}
 } 
 
-let usuario = login();
-console.log(usuario); 
-
-
-
 function calcular (operacion,numero1,numero2){
-    let calcular = obtenerDato(DATOS.OPERACION)
+    let resultado;
     if (operacion === '+'){
-        operacion = NUMERO1
+    resultado = (parseFloat(numero1) + parseFloat(numero2))
         alert('El resultado de ' + numero1 + " + " + numero2 + ' es ' + (numero1+numero2))
     }
     else if (operacion === '-'){
-        operacion = NUMERO2
+    resultado = (parseFloat(numero1) - parseFloat(numero2))
         alert('El resultado de ' + numero1 + " - " + numero2 + ' es ' + (numero1-numero2))
+    }
+    return resultado
+}
+
+function calculadora() {
+    let operacion = obtenerDato(DATOS.OPERACION)
+    let numero1 = obtenerDato(DATOS.NUMERO1)
+    let numero2 = obtenerDato(DATOS.NUMERO2)
+    let accion = calcular(operacion, numero1, numero2)
+    generarAlerta(accion)
+    agregarAlHistorial(accion)
+}
+
+/* function renderizar historial con for of */
+
+/* 
+function renderizarHistorial(historial){
+    let listaStrHistorial = ''
+    for (const item of historial){
+        listaStrHistorial = listaStrHistorial + `
+        accion: ${item.accion}
+        operacion: ${item.operacion}
+        numeros: ${item.a}, ${item.b}
+        resultado: ${item.resultado}
+        `
+        }
+    return listaStrHistorial
+}
+console .log (renderizarHistorial(historial)) 
+*/
+
+
+/* function realizar historial con map (bueno para react) */
+
+/* 
+function renderizarHistorial(historial){
+    const arrayDeElementos = historial.map(function(elemento){
+        return `
+        accion: ${elemento.accion}
+        operacion: ${elemento.operacion}
+        numeros: ${elemento.a}, ${elemento.b}
+        resultado: ${elemento.resultado}
+        `
+    })
+    return arrayDeElementos.join('\n')
+}
+
+alert (renderizarHistorial(historial)) 
+*/
+
+/* Crear una funcion llamada agregarAlHistorial(elemento historial)
+elementoHistorial = {
+    accion: 'CALCULAR',
+    operacion: '-',
+    a: 1,
+    b: 2,
+    resultado: -1
+}
+va agregar el objeto al array global historial 
+
+vamos a hacer otra funcion llamada obtenerHistorial() que va a retornar el historial global 
+ */
+
+const historial = []
+function agregarAlHistorial(elementoHistorial){
+    historial.push(elementoHistorial)
+}
+
+agregarAlHistorial({
+    accion: 'CALCULAR',
+    operacion: '+',
+    a: 1,
+    b: 2,
+    resultado: 2 }
+)
+
+
+function obtenerHistorial(){
+    return historial
+}
+
+console .log  (obtenerHistorial())
+
+/* ---------------------------------------------------------------- */
+/* codigo de agus */
+
+/* 
+function validarEmail(email) {
+    return /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g.test(email)
+}
+
+function validarPassword(password){
+    return (Boolean(password) && password.length > 6 && password != password.toLowerCase())
+} 
+
+function validarOperacion (operacion){
+    return (operacion === '+' || operacion === '-')
+}
+
+
+function validarNumero (numero){
+    return Boolean(numero) && !isNaN(numero)
+}
+
+function obtenerDato (data){
+    let dato = prompt(data.mensaje)
+    while(!data.validacion(dato)){
+        dato = prompt(data.error)
+    }
+    return dato
+}
+
+const DATOS = { 
+    EMAIL: {
+        mensaje: 'ingrese un email',
+        error: 'direccion de email no valida, por favor ingrese un email valido',
+        validacion: validarEmail
+    },
+    PASSWORD: {
+        mensaje: 'Ingrese una contrasena. Debe contener:' +  '\n' + '-Una letra en mayuscula' + '\n' + '-Almenos 6 caracteres ',
+        error:'Error. Debe contener:' +  '\n' + '-Una letra en mayuscula' + '\n' + '-Almenos 6 caracteres ',
+        validacion: validarPassword
+    },
+    OPERACION: {
+        mensaje: 'ingrese el tipo de calculo que desea realizar (suma o resta)',
+        error: 'Error. por favor ingrese una operacion(suma o resta)',
+        validacion: validarOperacion
+    },
+    NUMERO1: {
+        mensaje: 'ingrese el primer numero con el que va a operar',
+        error: 'Error. por favor ingrese un numero',
+        validacion: validarNumero
+    },
+    NUMERO2: {
+        mensaje: 'ingrese el segundo numero con el que va a operar',
+        error: 'Error. por favor ingrese un numero',
+        validacion: validarNumero
     }
 }
 
+function login() {
+let email = obtenerDato(DATOS.EMAIL)
+let password = obtenerDato(DATOS.PASSWORD)
+    return {email: email, password: password}
+} 
+
+function calcular (operacion,numero1,numero2){
+    let resultado;
+    if (operacion === '+'){
+        resultado = (Number(numero1)+Number(numero2))
+    }
+    else if (operacion === '-'){
+        resultado = (numero1-numero2)
+    }
+    return {
+        operacion: operacion, 
+        numero1: numero1, 
+        numero2: numero2, 
+        resultado: resultado
+    }
+}
+
+function calculadora() {
+    let operacion = obtenerDato(DATOS.OPERACION)
+    let numero1 = obtenerDato(DATOS.NUMERO1)
+    let numero2 = obtenerDato(DATOS.NUMERO2)
+    let accion = calcular(operacion, numero1, numero2)
+    generarAlerta(accion)
+    agregarAlHistorial(accion)
+}
+
+const historial = [];
+
+function generarAlerta(accion) {
+    alert('El resultado de ' + accion.numero1 + " " + accion.operacion + " " + accion.numero2 + ' es ' + accion.resultado)
+}
+
+function agregarAlHistorial(accion) {
+    historial.push({
+        accion: 'CALCULAR', 
+        operacion: accion.operacion, 
+        a: accion.numero1, 
+        b: accion.numero2, 
+        resultado: accion.resultado
+    })
+}
+
+function renderizarHistorial(historial) {
+    let renderHistorial = ' El historial es:\n'
+    for (let element of historial) {
+        renderHistorial = renderHistorial + 'Accion: ' 
+        + element.accion + ' operacion: ' + element.operacion 
+        + ' numeros: ' + element.a + ', ' + element.b + ' resultado: ' 
+        + element.resultado + '\n'
+    }
+    alert(renderHistorial)
+} 
+ */
 

@@ -7,3 +7,11 @@ function validarEmail(email) {
 
 console .log (validarEmail('asdasd@gmail.com'))
 
+function agregarAlHistorial(elementoHistorial){
+    historial.push(elementoHistorial)
+}
+
+
+function obtenerHistorial(){
+    return historial
+}
