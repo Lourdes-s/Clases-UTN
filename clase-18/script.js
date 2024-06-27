@@ -18,7 +18,7 @@ localStorage.setItem('array', {})
 
 /* ejemplo: */
 
-/* console .log (localStorage.getItem('importante')) */ */
+/* console .log (localStorage.getItem('importante')) */ 
 
 /* REMOVEITTEM(key str) */
 /* localStorage.removeItem('array') */
