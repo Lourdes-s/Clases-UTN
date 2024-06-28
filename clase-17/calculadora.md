@@ -90,7 +90,7 @@ Mostrar por alerta 'el resultado de {numero1} {operacion} {numero2} es {resultad
 
 
 
-HISTORIAL:
+TERCERO: HISTORIAL
 
 El historial debera tener el siguiente formato
 
@@ -159,3 +159,15 @@ elementoHistorial = {
 va agregar el objeto al array global historial 
 
 vamos a hacer otra funcion llamada obtenerHistorial() que va a retornar el historial global 
+
+
+
+Despues de ver localStorage vamos a hacer:
+
+Transformar el array historial a string con notacion JSON y mostrarlo por alerta
+AUTOCORRECCION:
+la alerta no debe mostrar [objetObjet]
+
+En la funcion de agregarAlHistorial vamos a hacer el push que veniamos haciendo pero ademas vamos a guardar el historial en el localStorage con la key 'historial'
+
+La funcion obtener historial debe tomar el historial del localStorage y retornarlo como ARRAY 

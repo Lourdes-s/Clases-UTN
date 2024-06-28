@@ -64,22 +64,3 @@ console.log(stringComoObjeto) */
 /* console.log(objetoEnString) *///'{"nombre": "pepe", "edad": 70}
 
 
-/* 
-Transformar el array historial a string con notacion JSON y mostrarlo por alert
-
-
-AUTOCORRECCION:
-La alerta no debe mostrar [object Object]
-*/
-
-/* const objetoEnString = JSON.stringify(historial) */
-
-/* 
-En la funcion de agregar al historial vamos a hacer el push que veniamos haciendo
-pero ademas vamos a guardar el historial en el localStorage con la key 'historial'
-*/
-
-
-/* 
-La funcion obtener historial debe tomar el historial del localStorage y retornalo como ARRAY 
-*/

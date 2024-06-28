@@ -253,7 +253,7 @@ console .log (renderizarHistorial(historial))
 
 /* function realizar historial con map (bueno para react) */
 
-/* 
+
 function renderizarHistorial(historial){
     const arrayDeElementos = historial.map(function(elemento){
         return `
@@ -267,9 +267,10 @@ function renderizarHistorial(historial){
 }
 
 alert (renderizarHistorial(historial)) 
-*/
+
 
 /* Crear una funcion llamada agregarAlHistorial(elemento historial)
+
 elementoHistorial = {
     accion: 'CALCULAR',
     operacion: '-',
@@ -277,6 +278,7 @@ elementoHistorial = {
     b: 2,
     resultado: -1
 }
+
 va agregar el objeto al array global historial 
 
 vamos a hacer otra funcion llamada obtenerHistorial() que va a retornar el historial global 
@@ -302,8 +304,60 @@ function obtenerHistorial(){
 
 console .log  (obtenerHistorial())
 
-/* ---------------------------------------------------------------- */
-/* codigo de agus */
+
+
+
+
+
+
+
+/* ---------------------------------------------CODIGO CON LOCALSTORAGE--------------------------------------------------------- */
+/* ooara tener persistencia de datos
+ */
+
+/* ejercicio? */
+const objetoEnStr = JSON.stringify (historial)
+alert (objetoEnStr)
+
+function agregarAlHistorial (elementoHistorial){
+    historial.push (elementoHistorial)
+    const historialStr = JSON.stringify(historial)
+    localStorage.setItem('historial', historialStr)
+}
+
+function obtenerHistorial(){
+    let historialStr = localStorage.getItem('historial')
+    return JSON.parse(historialStr)
+}
+
+/* verificando que un usuario que entra ppor primera vez tenga un historial, aunque sea un array vacio */
+if(obtenerHistorial() === null){
+    /* si no hay historial guarde ell historial como array vacio */
+    localStorage.setItem('historial', JSON.stringify([]))
+}
+
+
+/* Modificaciones al codigo */
+
+function agregarAlHistorial (elementoHistorial){
+    const historial = obtenerHistorial() /* hago una variable que se llame historial ppara que obtenga el historial del localStorage */
+    historial.push (elementoHistorial)/* como se que obtenerHistorial es un array (por el if) y que nunca va a ser un null porque daria error le puedo hacer un push */
+    const historialStr = JSON.stringify(historial)
+    localStorage.setItem('historial', historialStr)
+}
+
+/* Nota: todo lo que hace la pagina debe estar por debajo del if porque es lo que se va a ejecutar primero */
+
+/* Ahora cuando yo quiera ingresar al historial tengo que poner obtenerHistorial.
+Ejemplo: si quiero renderizar el historial tengo que hacer:
+console .log (renderizarHistorial(obtenerHistorial())) voy a renderizar el historial obtenido y lo voy a mostrar por consola */
+
+
+
+
+
+
+/* ---------------------------------------------CODIGO DE AGUS--------------------------------------------------------- */
 
 /* 
 function validarEmail(email) {
