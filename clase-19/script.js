@@ -4,11 +4,11 @@
 
 /* console .dir(document) */
 
-/* 
-document es una variable global de JS 
+
+/* document es una variable global de JS 
 la variable document es una representacion como objeto de nuestro html 
-el 'console.dir' es lo mismo que el 'console.log' solamente que muestra los objetos como objetos, en cambio el console.log me lo muestra como html en la consola 
- */
+el 'console.dir' es lo mismo que el 'console.log' solamente que muestra los objetos como objetos, en cambio el console.log me lo muestra como html en la consola  */
+
 
 
 
@@ -242,8 +242,8 @@ HistorialRender.innerHTML = listaDeProductos */
 
 
 
-
-/* ------------------------------- Como llamar a un elemento por su clase ------------------------------- */
+/*------------------------------- querySelector('.dato')------------------------------- */
+/* Como llamar a un elemento por su clase */
 
 /* 
 const historial = [
@@ -298,9 +298,10 @@ HistorialRender.innerHTML = listaDeProductos
 
 
 
+/* -------------------------------getElementsByClassName------------------------------- */
+/* si yo quiero llamar a todos los elementos que tienen la clase */
 
-/* -------------------------------si yo quiero llamar a todos los elementos que tienen la clase ------------------------------- */
-
+/* 
 const historial = [
     {
         id:'001',
@@ -323,28 +324,10 @@ const historial = [
         fecha: '30/09/2023'
     }
 ] 
-/* 
-const HistorialRender = document.getElementsByClassName('.historial-item')
 
-let listaDeProductos = ''
 
-for (item of historial){
-    listaDeProductos = listaDeProductos + `
-    <div class='historial-item'>
-        <span>
-            <b>ID: ${item.id}</b>
-        </span>
-        <h3>${item.nombre}</h3>
-        <span>${item.fecha}</span>
-        <br>
-        <hr>
-    </div>
-    `
-}
 
-HistorialRender.innerHTML = listaDeProductos  */
 
-/* const listaHistorialHTML = document.querySelector('.lista') */
 const listaHistorialHTML = document.querySelector('#lista-historial')
 let itemHistorial = ''
 
@@ -360,17 +343,172 @@ for(const item of historial){
         <br>
     </div>
     `
-}
+} 
+ */
+
+
+/* listaHistorialHTML.innerHTML = itemHistorial */
+
+/* const historialItemHTML = document.getElementsByClassName('historial-item') *///1.estoy llamando a todos los elementos con la clase historial-item
+
+/* console.log(historialItemHTML) */ //esto me devuelve un HTML collection, que es una especie de array, que en realidad es un objeto pero si yo voy a mirarlo tiene length, esta enumerado (0,1,2,3) pero no es un array porque el prototype dice HTML collection, no tiene todo lo que tiene los array, si me posisiono en uno de esos me referencia a uno en mi HTML
+
+/* a esto le podria dar la siguiente utilidad: */
+/* for(const item of historialItemHTML){  */// 2.despues por cada item 
+    /* const btn = document.createElement('button') *///3. creo un boton
+    /* btn.innerText = 'Ver publicacion' *///4. el boton dice ver publicacion
+    /* item.appendChild(btn) */// 5. voy añadiendo a mi item
+/* }  */
+
+
+/* me a haciendo un boton sobre cada item. Cada item representaria cada div, generalmente no lo vamos a usar para esto, pero es un ejemplo, si se va a utilizar para los eventos*/
+
+
+
+
+
+
+
+
+/* -------------------------------querySelectorAll------------------------------- */
+/* si yo quiero llamar a todos mis elementos con la misma clase, hace lo mismo que getElementsByClassName */
+
+/* 
+const historial = [
+    {
+        id:'001',
+        nombre: 'tv samsung',
+        fecha: '17/09/2020'
+    },
+    {
+        id: '022',
+        nombre: 'Macbook',
+        fecha: '14/10/2020'
+    },
+    {
+        id: '030',
+        nombre: 'Celular motorola',
+        fecha: '17/09/2021'
+    },
+    {
+        id: '301',
+        nombre: 'Zapatillas nike',
+        fecha: '30/09/2023'
+    }
+] 
+
+const listaHistorialHTML = document.querySelector('#lista-historial')
+let itemHistorial = ''
+
+for(const item of historial){
+
+    itemHistorial = itemHistorial + `
+    <div class='historial-item'>
+        <span>
+            <b>ID: #${item.id}</b>
+        </span>
+        <h3>${item.nombre}</h3>
+        <span>Fecha: ${item.fecha}</span>
+        <br>
+    </div>
+    `
+} 
 
 listaHistorialHTML.innerHTML = itemHistorial
 
-const historialItemHTML = document.getElementsByClassName('historial-item') 
+const historialItemHTML = document.querySelectorAll('.historial-item')
 
-console.log(historialItemHTML) //esto me devuelve un HTML collection, que es una especie de array, que en realidad es un objeto pero si yo voy a mirarlo tiene length, esta enumerado (0,1,2,3) pero no es un array porque el prototype dice HTML collection, no tiene todo lo que tiene los array, si me posisiono en uno de esos me referencia a uno en mi HTML
+console.log(historialItemHTML)
 
 for(const item of historialItemHTML){
-    const btn = document.createElement('button')//creo un boton
+    const btn = document.createElement('button')
     btn.innerText = 'Ver publicacion'
-    item.appendChild(btn)// voy añadiendo a mi item
+    item.appendChild(btn)
 }
-/* me a haciendo un boton sobre cada item */ /* cada item representaria cada div */
+ */
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------PROPIEDADES DE DOM------------------------------- */
+/* ademas del innertext y el innerHTML  */
+
+
+/*  -------------------------------input.value------------------------------- */
+/* capturar el valor de un input */
+
+/* 
+const input = document.getElementById('input')//llamamos al input
+
+console.log(input.value)// .value es acceder a la propiedad valor del input 
+*/
+
+/*  -------------------------------input.classList------------------------------- */
+/* acceder a las clases de un elemento HTML */
+
+/* 
+const input = document.getElementById('input')//llamamos al input
+
+console.log(input.classList)//classlist llama al objeto lista de clases del elemento(input). Me aparece un objetto con formato de array que tiene los valores de las dos clases
+ */
+
+
+/* si yo quiero agregar una clase lo puedo hacer dde la siguiente manera: */
+/* 
+const input = document.getElementById('input')
+
+input.classList.add('rojo')//agrego la class rojo al elemento input
+
+*/
+
+
+
+/* si yo quiero quitar una clase lo puedo hacer dde la siguiente manera:  */
+/* 
+const input = document.getElementById('input')
+
+input.classList.remove('input')//en mi HTML va a aparecer solamente input-especial 
+*/
+
+
+
+/* hacer un interruptor/toggle de clase (si esta la clase la elimina y si no esta la agrega)*/
+
+/* const input = document.getElementById('input')
+
+input.classList.toggle('mostrar')//pongo el argumento de la clase que quiero que funcione como interruptor, si esta prendido lo apaga y si esta apagado se prende */
+
+
+
+
+/* Alternar entre clases */
+
+/* if(input.classList.value.split(' ').includes('mostrar')){
+    input.classList.replace('mostrar', 'ocultar')
+}
+else{
+    input.classList.replace('ocultar','mostrar' )
+} */
+
+
+
+
+
+
+
+
+/*  -------------------------------EVENTOS------------------------------- */
+/* los eventos son acciones que vamos a asociar a los botones, por ejemplo y por cada boton le vamos a asociar la funcionalidad que necesito, por ejemplo */
+
+    const modalHTML = document.querySelector('.modal-container')
+    const btnOpenHTML = document.getElementById('btn-open')
+    
+    btnOpenHTML.onclick = function () {
+        modalHTML.classList.toggle('ocultar')
+    }
