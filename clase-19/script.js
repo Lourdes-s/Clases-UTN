@@ -13,7 +13,7 @@ el 'console.dir' es lo mismo que el 'console.log' solamente que muestra los obje
 
 
 /* GET ELEMENT BY ID  */
-/* es un metodo que nos permite tener un elemento por su id y sino devvuelvve null*/
+/* es un metodo que nos permite tener un elemento por su id y sino devuelve null*/
 
 /* const titulo = document.getElementById('titulo') */ // es un HTML element
 
@@ -299,7 +299,7 @@ HistorialRender.innerHTML = listaDeProductos
 
 
 /* -------------------------------getElementsByClassName------------------------------- */
-/* si yo quiero llamar a todos los elementos que tienen la clase */
+/* si yo quiero llamar a todos los elementos que tienen la clase, devuelve una coleccion */
 
 /* 
 const historial = [
