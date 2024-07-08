@@ -8,7 +8,16 @@
 <body>
     <button onclick="alertar()">Haz click 1</button>
     <button id="btn-especial">Haz click 2</button>
-    <button class="btn">Haz click 3</button>
+    <button class="btn" id="btn-3">Haz click 3</button>
+
+    <form id="formulario">
+        <h2>Ingresa un dato</h2>
+        <label for="dato">Dato:</label>
+        <input type="text" name="dato" id="dato"><!-- el name hace referencia a como va a ser llamado ese dato en JS -->
+        <!-- el formulario se va a atransformar en un objeto, cuando se transforme a formuulario el nombre va a ser el nombre de la propiedad dentro de mi objeto  -->
+        <input type="submit">
+    </form>    
+
     <script src="./script.js"></script>
 </body>
 </html>
