@@ -79,7 +79,7 @@ const response = fetch(URL_API + '/users', {//fetch es una funcion que espera re
 })
 */
 
-/* al ser fetch de tipo asincronico entonces la respuesta la voy a guardar en una constante, cuaando fetch me devuelva la respuesta la devuelvoo en una constante*/
+/* al ser fetch de tipo asincronico entonces la respuesta la voy a guardar en una constante, cuaando fetch me devuelva la respuesta la devuelvo en una constante*/
 
 /* si yo hago un console.log(response) -> me va a dar un promise pending */
 
@@ -102,7 +102,7 @@ la callstack se da de la siguiente manera:
 
 como el callstack necesita la respuesta y la respuesta viene del fetch, el fech tiene que responder algo para que el console.log se pueda ejecutar, el problema es que fetch es un codigo asincronico no puede ser esperado por defecto, sino que se va a ejecutar en simultaneo al console.log : console.log() |  fetch() y para que fetch se ejecute en simultaneo al console.log necesita crear un estado de respuesta provisorio, entonces el fetch se resuelve momentaneamente para que el console.log se pueda ejecutar como pending, retorna un promise pending. Entonces siempre va a quedar en pending porque nunca se va a ejecutar el console.log una vez el fetch este resuelto o falle. Entonces estoy directamente estoy ejecutando el resultado de fetch pero al ser asincronico y necesita tiempo devuelve pending.
 
-La naturaleza de fetch es asi, tarda un tiempo en resolverse, el tiempo que tarde fetch en cargarse, esot depende de la saturacion del servidor y si es un buen servidor, si el servidor esta muy lejos. 
+La naturaleza de fetch es asi, tarda un tiempo en resolverse, el tiempo que tarde fetch en cargarse, esto depende de la saturacion del servidor y si es un buen servidor, si el servidor esta muy lejos, etc. 
 Ademas console es extremadamente rapido y siempre va a ser mas rapido que hacer un fetch.
 Si tubiese que cargar todos los datos de forma sincronica tardaria mucho en cargar toda la web.
 Es una forma de quitarle peso a la pagina.
@@ -112,7 +112,8 @@ Es una forma de quitarle peso a la pagina.
 
 /* 1. voy a hacer una funcion: */
 
-    const URL_API = 'https://jsonplaceholder.typicode.com'//la variable deberia ser global
+/* 
+const URL_API = 'https://jsonplaceholder.typicode.com'//la variable deberia ser global
 
 const obtenerUsuarios = async () =>{//voy a decir que mi funcion va a trabajar con codigo asincronico usando la palabra reservada async, siempre va antes del parametro
     const response = await fetch(URL_API + '/users', { // y voy a indicarle que cuando cree la variable response todo el codigo aguarde a que se resuelva el fetch poniendo la palabra reservada await, el await siempre va en funciones asincronas y ademas va antes de la funcion que quiero que se aguarde 
@@ -120,20 +121,117 @@ const obtenerUsuarios = async () =>{//voy a decir que mi funcion va a trabajar c
     })
     console.log(response)//despues de eso se debe ejecutar el console.log
 }
+
+obtenerUsuarios() 
+*/
+
 /* entonces de esta forma le indico una sincronia al codigo asincronico */
-obtenerUsuarios()
+
 
 /* si yo quiero ahora mostrar los post */
 
-const obtenerPosts = async () => {
+/* const obtenerPosts = async () => {
     const response = await fetch(URL_API + '/posts', { 
         method: 'GET'
     })
-    console.log(response)
+    const data = await response.json() //porque yo se que a mi respuesta quiero recodificarla a JSON, ademas JSON es un metodo que me devuelve una promesa y al ser una promesa es asincronica, entonces json es asincrona
 }
 
-obtenerPosts()
+obtenerPosts() */
 
 /* aunque yo ponga obtener usuario antes que post no significa que vaya a cargar antes porque no hay un orden, son asincronicos entonces va a aparecer el que se cargue primero 
 cuando tenemos codigo asincronico nos conviene pasarlo a manera sincronica por lo menos dentroo de la misma funcion a codigo sincronico porque nosotros estamos trabajando de alguna manera en sincronia 
 */
+
+/* lo que yo necesito es la carga util 
+la API JSON place holder me devuelve JSON y lo que voy a buscar ahora es el JSON de esta respuesta */
+
+/* 
+Si fetchean a esta direccion: https://jsonplaceholder.typicode.com/users/1
+Obtendran el detalle de un usuario
+El usuario tendra este formato
+{
+  "id": 1,
+  "name": "Leanne Graham",
+  "username": "Bret",
+  "email": "Sincere@april.biz",
+  "address": {
+    "street": "Kulas Light",
+    "suite": "Apt. 556",
+    "city": "Gwenborough",
+    "zipcode": "92998-3874",
+    "geo": {
+      "lat": "-37.3159",
+      "lng": "81.1496"
+    }
+  },
+  "phone": "1-770-736-8031 x56442",
+  "website": "hildegard.org",
+  "company": {
+    "name": "Romaguera-Crona",
+    "catchPhrase": "Multi-layered client-server neural-net",
+    "bs": "harness real-time e-markets"
+  }
+}
+
+Mostrar en HTML dentro de un div
+
+h2: {user.name}
+span: phone: {user.phone}
+span: email: {user.email}
+
+(OPCIONAL)
+Si no se cargo el fetch debera mostrar un h2 que diga 'cargando...'
+*/
+
+/* 
+const URL_API = 'https://jsonplaceholder.typicode.com'
+
+const obtenerUser = async () => {
+    const userInfoHTML = document.getElementById('userInfo')
+    userInfoHTML.innerHTML = '<h2>Cargando. . .</h2>'
+
+    const response = await fetch(URL_API + '/users/1', { 
+        method: 'GET'
+    })
+    const user = await response.json() 
+
+    userInfoHTML.innerHTML = `
+    <div>
+    <h2>Nombre: ${user.name}</h2>
+    <span>Phone: ${user.phone}</span>
+    <br>
+    <span>Email: ${user.email}</span>
+    </div>
+`
+}
+
+
+obtenerUser()
+ */
+
+/* forma correcta: */
+
+const buscarUserPorId = async (id) =>{
+    const response = await fetch(URL_API + '/users/' + id, {
+        method: 'GET'
+    })
+    const user = await response.json()
+    return user
+}
+
+const renderizarUsuario = async ( valorBusqueda, buscarUsuarioCallback ) => {
+    const userInfoHTML = document.getElementById('user-info')
+    userInfoHTML.innerHTML = `<h2>Cargando...</h2>`
+
+    const user = await buscarUsuarioCallback(valorBusqueda)
+
+    userInfoHTML.innerHTML = `
+    <h2 class='titulo'>Nombre: ${user.name}</h2>
+    <span>Email: ${user.email}</span>
+    <br>
+    <span>Phone: ${user.phone}</span>
+    `
+}
+
+renderizarUsuario(1, buscarUserPorId)
