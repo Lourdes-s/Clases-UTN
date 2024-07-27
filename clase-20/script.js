@@ -185,7 +185,7 @@ btnClick3.onclick = function (evento){
 Si yo le hago un console.log a eso me da un objeto que proviene de mi HTML pero no es un HTML porque en JS no exite el HTML
 Si yo le hago un console.dir me sale el 'input#dato' este no es cualquier input, sino que es especificamente el que utilizamos
 Si yo en mi input escribi pepe y puse submit cuanto yo entre en el 'inout#dato' en sus valores en la parte de VALUE me va a salir 'pepe'
-3. Entonces para acceder a el vlalor del input tengo que poner (formularioHTML.dato,value)
+3. Entonces para acceder a el valor del input tengo que poner (formularioHTML.dato.value)
 */
 
 /* 
@@ -193,7 +193,7 @@ const formularioHTML = document.getElementById('formulario')
 
 const handlesubmit = (evento) => {
     evento.preventDefault()
-    console.dir(formularioHTML.dato,value)
+    console.dir(formularioHTML.dato.value)
 }
 
 

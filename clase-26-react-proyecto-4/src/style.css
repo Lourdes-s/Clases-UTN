@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+
+.colors-cards{
+    display: flex;
+    gap: 15px;
+    width: calc(250px * 4 + 15px * 3 + 20px * 2); /* hacer el calc hace que la pagina quede bien ajustado a las medidas / / 1100 width */
+    padding: 0 20px;
+    flex-wrap: wrap;
+}
+
+.color-card{
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+    gap: 20px;
+}
+
+.color-card .colors{
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    width: 100%;
+    background-color: pink;
+    border-radius: 10px;
+    overflow: hidden; /* para que el espacio de los hijos no rebalse el del padre */
+}
+/* NTH CHILD nos permite llamar segun el orden a hijos que tega el mismo nombre*/
+.color-card .colors .color:nth-child(1){
+/* no es necesario que ponga width: 100% */
+    height:40%;
+}
+
+.color-card .colors .color:nth-child(2){
+    height:30%;
+}
+
+.color-card .colors .color:nth-child(3){
+    height:17%;
+}
+
+.color-card .colors .color:nth-child(4){
+    height:13%;
+}
+
+
+.color-card .color-card-controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.color-card .color-card-controls .btn-like{
+    height: 40px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    background-color: #FFFFFF;
+    border: 1PX solid rgba(0, 0, 0, 0.116);
+    border-radius: 10px;
+    gap: 5px;
+}
+
+.color-card .color-card-controls .time{
+    color: #9D9D9D;
+    font-size: 12px;
+}
+
